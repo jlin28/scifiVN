@@ -1,15 +1,63 @@
 <!DOCTYPE html>
 
 <html>
-    
-	<head>
-        
-		<title> STARTSCREEN </title>
-        
-	</head>
 
-	<body>
-		
+	<head>
+
+		<title> STARTSCREEN </title>
+
+    <style>
+
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      #cont {
+        display: flex;
+        flex-direction: row;
+
+        height: 100vh;
+        width: 100vw;
+
+        padding-left: 12%;
+      }
+
+      #buttonCont {
+        align-self: center;
+        width: 25%;
+      }
+
+      #startButton {
+        font-size: 220%;
+        width: 100%;
+
+        border-color: black;
+        border: solid;
+        border-width: 2px;
+        background: rgba(255,255,255,.3);
+
+        padding: 0.5%;
+      }
+
+      #startButton:hover {
+        transform: scale(110%);
+      }
+    </style>
+	</head>
+  <body>
+
+    <div id="cont">
+      <div id="buttonCont">
+    		 <button id="startButton" onclick="window.location.href='/select'">
+           ENTER
+         </button>
+       <div>
+     </div>
+
+    <script>
+    </script>
+
 	</body>
-    
+
 </html>
