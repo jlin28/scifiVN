@@ -6,53 +6,69 @@
 
 		<title> STARTSCREEN </title>
 
+		<link rel="stylesheet"
+			type="text/css"
+			href="/static/style.css">
+
     <style>
 
       body {
-        margin: 0;
-        padding: 0;
-      }
-
-      #cont {
-        display: flex;
-        flex-direction: row;
+				background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/static/backgrounds/start.gif");
+				background-size: cover;
 
         height: 100vh;
         width: 100vw;
 
-        padding-left: 12%;
+        padding: 8%;
+
+				font-family: font;
+				color: black;
+
+				overflow: hidden;
       }
 
-      #buttonCont {
-        align-self: center;
-        width: 25%;
+      #cont {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: 1.5em;
+
+				height: 60%;
+				width: 40%;
+
+				background-color: rgba(255,255,255,0.6);
+				border-radius: 8%;
+
+				padding: 1%;
+				padding-top: 5%;
       }
 
       #startButton {
         font-size: 220%;
-        width: 100%;
 
-        border-color: black;
-        border: solid;
-        border-width: 2px;
-        background: rgba(255,255,255,.3);
+        border: none;
 
         padding: 0.5%;
+
+				background: none;
+
+				font-family: font;
+				color: black;
       }
 
       #startButton:hover {
-        transform: scale(110%);
+        transform: scale(115%);
+				color: white
       }
     </style>
 	</head>
   <body>
 
     <div id="cont">
-      <div id="buttonCont">
-    		 <button id="startButton" onclick="window.location.href='/select'">
-           ENTER
-         </button>
-       <div>
+			<h1 style="font-size: 430%; font-style: italic"> HALCYON </h1>
+  		 <button id="startButton" onclick="window.location.href='/select'">
+         &lt; ENTER &gt;
+       </button>
      </div>
 
     <script>

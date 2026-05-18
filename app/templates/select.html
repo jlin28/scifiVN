@@ -2,13 +2,124 @@
 
 <html>
 	<head>
-        
+
 		<title> SELECT </title>
-        
+
+		<link rel="stylesheet"
+			type="text/css"
+			href="/static/style.css">
+
+		<style>
+
+			body {
+				display: flex;
+
+				padding: 2%;
+			}
+
+			#buttonsCont {
+				width:50%;
+				gap: 2em;
+
+				display: flex;
+				flex-direction: column;
+			}
+
+			#mae, #van, #alix {
+				display: none;
+				position: absolute;
+
+				z-index: 2;
+
+				top: 0;
+				left: 5%;
+
+				width: 90%;
+				height: 100%;
+
+				background-size: 100% 100%;
+			}
+
+			#blackout {
+				display: none;
+				position: absolute;
+
+				z-index: 1;
+
+				top: 0;
+				left: 0;
+
+				width: 100vw;
+				height: 100vh;
+
+				background-color: rgba(0,0,0,0.8);
+			}
+
+			#close {
+				display: none;
+				position: absolute;
+
+				z-index: 1;
+
+				top: 3%;
+				right: 1%;
+
+				font-family: font;
+				font-size: 200%;
+				color: white;
+
+				background: none;
+				border-style: none;
+			}
+
+			#close:hover {
+				transform: scale(115%);
+				color: darkred;
+			}
+
+		</style>
 	</head>
 
 	<body>
-		
+
+		<div id="buttonsCont">
+			<button onclick="reveal('mae')"> MAE </button>
+			<button onclick="reveal('van')"> TSH'VAN </button>
+			<button onclick="reveal('alix')"> ALIX </BUTTON>
+		</div>
+
+		<div id="blackout"></div>
+
+		<div style="background-image: url('/static/images/maebook.png')" id="mae">
+		</div>
+
+		<div style="background-image: url('/static/images/tshvanbook.png')" id="van">
+		</div>
+
+		<div style="background-image: url('/static/images/alixbook.png')" id="alix">
+		</div>
+
+		<button id="close" onclick="hideBook()"> [X] </button>
+
+		<script>
+			var currentlyOpened;
+
+			function reveal(person) {
+				document.getElementById('blackout').style.display = 'block';
+				document.getElementById(person).style.display = 'block';
+				document.getElementById('close').style.display = 'block';
+
+				currentlyOpened = person;
+			}
+
+			function hideBook() {
+				document.getElementById('blackout').style.display = 'none';
+				document.getElementById(currentlyOpened).style.display = 'none';
+				document.getElementById('close').style.display = 'none';
+			}
+
+		</script>
+
 	</body>
 
 </html>
